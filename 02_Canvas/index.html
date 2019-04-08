@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canElem">
+        你的浏览器不支持canvas
+    </canvas>
+    <script>
+        // 获得画布
+        var canvas = document.getElementById("canElem");
+        // 获得画笔
+        var context = canvas.getContext("2d");
+        // 设置画布的长度和宽度和样式
+        canvas.width = 900;
+        canvas.height = 600;
+        canvas.style.border = "1px solid red";
+        // 绘制三角形
+        context.beginPath();  // 开始路径
+        context.moveTo(100, 100);  // 设置移动的起始点
+        context.lineTo(300, 100);  // 绘制线
+        context.lineTo(300, 500);
+        context.closePath();
+        context.stroke();  // 描绘路径
+        // context.fill();  // 填充颜色
+    </script>
+</body>
+
+</html>
