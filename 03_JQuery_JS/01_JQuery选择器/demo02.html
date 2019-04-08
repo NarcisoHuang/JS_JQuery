@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function writeIt(){
+            $("#heading").css('font-weight', 'bold').html("JQuery");
+            var q = document.getElementById("Question");
+            q.innerHTML = "I prefact JQuery";
+        }
+    </script>
+</head>
+<body onload="writeIt()">
+    <!-- 测试JQuery选择器 -->
+    <div id="heading">JQuery or JavaScript</div>
+    <div id="Question">Which method do you prefact?</div>
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+</body>
+</html>

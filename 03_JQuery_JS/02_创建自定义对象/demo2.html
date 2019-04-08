@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function writeIt(){
+            var characters = new Array();
+            characters.push(new Characters("Huang", "Zhehao", "ZheJiang", "WenZhou"));
+            lego = new Characters("Li", "", "", "");
+            lego.last = "JingYe";
+            lego.sheng = "ZheJiang";
+            lego.shi = "HangZhou";
+            characters.push(lego);
+            for(var i=0; i<characters.length; i++) {
+                var character = characters[i];
+                character.number = i+1;
+                document.write(character.number + ". " + character.getFullName()
+                + character.getDetails() + "<br />");
+            }
+        }
+        
+        function Characters(first, last, sheng, shi){
+            this.first = first;
+            this.last = last;
+            this.sheng = sheng;
+            this.shi = shi;
+        }
+        // 
+        Characters.prototype = {
+            getFullName : function() {
+                return this.first + " " +this.last;
+            },
+            getDetails : function() {
+                return " lai zi " + this.shi + ", of the " + this.sheng;
+            }
+        }
+    </script>
+</head>
+<body onload="writeIt()">
+        <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+</body>
+</html>
