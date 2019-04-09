@@ -77,8 +77,10 @@ body{
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset;  /* 设置内置阴影 */ 
     background: rgba(7, 17, 27, 0.4);
     margin-left: 8px;
+    cursor: pointer;  /* 设置手型 */
 }
 .dots span.active{
     box-shadow: 0 0 0 2px rgba(7, 17, 27, 0.4) inset;
     background-color: #fff;
+    
 }
