@@ -7,8 +7,10 @@ function byId(id) {
 var index = 0,
     timer = null,
     pics = byId("banner").getElementsByTagName("div"),
-    dots = byId("dots").getElementsByTagName("span");
-len = pics.length;
+    dots = byId("dots").getElementsByTagName("span"),
+    prev = byId("prev"),
+    next = byId("next"),
+    len = pics.length;
 // console.log(len);
 
 function slideImg() {
@@ -65,5 +67,5 @@ function changeImg() {
 
 }
 
- 
+
 slideImg();
