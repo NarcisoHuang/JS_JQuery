@@ -1,3 +1,17 @@
+// 编写的思路
+// 1、首先是写了一个封装的函数slideImg()
+// 划过清理定时器
+// 2、鼠标离开以后就定时调用切换图片的方法
+// 2、为了代码编写方便, 封装了byId()方法, 用来方便的通过Id得到元素
+// 3、所有的切换图片的方法都是通过修改index来实现功能
+// 4、为了实现进入页面就能够直接的开始自动的切换图片, 直接调用了main.onmouseout()函数
+
+
+
+
+
+
+
 // 封装一个代替getElementById()的方法
 function byId(id) {
     return typeof (id) === "string" ? document.getElementById(id) : id;
@@ -15,7 +29,7 @@ var index = 0,
 
 function slideImg() {
     var main = byId("main");
-    // 划过清楚定时器, 离开继续
+    // 划过清除定时器, 离开继续
     main.onmouseover = function () {
         // 划过清除定时器
         if (timer) {
@@ -34,11 +48,12 @@ function slideImg() {
             // 切换图片
             changeImg();  // index是全局变量, 应次不需要传参数
 
-        }, 3800);  // 3秒调用一次
+        }, 3000);  // 3秒调用一次
     }
 
     main.onmouseout();  // 自动在main上触发一个mouseout事件方法, 使得页面进去的时候就直接开始调用轮播的功能
 
+    // 点击圆点事件
     // 遍历所有点击, 且绑定点击事件, 点击圆点切换图片
     for (var d = 0; d < len; d++) {
         dots[d].id = d;
@@ -51,6 +66,23 @@ function slideImg() {
         }
     }
 
+    // 点击按钮事件
+    // 下一张
+    next.onclick = function () {
+        index++;
+        if (index == len) {
+            index = 0;
+        }
+        changeImg();
+    }
+    // 上一张
+    prev.onclick = function () {
+        index--;
+        if (index == -1) {
+            index = len - 1;
+        }
+        changeImg();
+    }
 }
 
 // 切换图片
